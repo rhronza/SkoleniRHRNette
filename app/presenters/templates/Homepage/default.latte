@@ -1,0 +1,40 @@
+{block content}
+    <div style="top:0px; margin-top: 70px; margin-left: 20px">Hlavní menu (Homepage:default)
+    
+    {form basicExample222}
+        <table>
+            <tr>
+                <td>
+                    {label name /}{input name}{label age /}{input age}
+                </td>
+                <td>
+                    {label gender /}
+                </td>
+                <td>
+                    {input gender}
+                </td>
+                <td>
+                    {label gender/}
+                </td>
+                <td>
+                    {input colors}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {label email/}{input email}
+                </td>    
+                <td>
+                    {label send/}{input send}
+                </td>    
+            </tr>
+                    
+                  
+            </tr>
+        </table>
+    {/form}    
+    </div>
+    ----------------------------------------------------------------------
+    {control basicExample222}
+ {*{control bootstrap2Rendering}*}
+{/block}

@@ -1,0 +1,57 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Sandbox</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+    	{block head}{/block}
+</head>
+
+<body>
+        {* table jako navigační menu*}
+
+        <nav>
+            <table style="top:0px; height: 75px; width: 100%;margin:0px auto; padding: 0px; position: fixed; background-color: #006AEB; 
+                          border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
+                <tr><td style=" vertical-align: middle; text-align: center; padding: 0px; margin: 0px">
+                    {*<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>*}
+                    {*<h1 style='color:white; text-align: center; list-style: none; padding: 0px; margin: 0px 0px 0px 0px'>Hlavní menu</h1>*}
+        
+
+                    <ul style='text-align: center; font-size: 0.7em; margin: 0px; color: white'>
+                       <li class="volbaMenu"><a n:href="Basicexample:formular" style="color: white">BasicExample</a></li>
+                       <li class="volbaMenu"><a n:href="Bootstrap2rendering:formular" style="color: white">Bootstrap2-Rendering</a></li>
+                       <li class="volbaMenu"><a n:href="Bootstrap3rendering:formular" style="color: white">Bootstrap3-Rendering</a></li>
+                       <li class="volbaMenu"><a n:href="Bootstrap4rendering:formular" style="color: white">Bootstrap4-Rendering</a></li>
+                       <li class="volbaMenu"><a n:href="Containers:formular" style="color: white">Containers</a></li>
+                       <li class="volbaMenu"><a n:href="Sign:in" style="color: white">Přihlašovací formulář</a></li>
+                       <li class="volbaMenu"><a n:href="Index0001ArrayHashList:formular2"	    style="color: white">Index0001ArrayHashList</a></li>
+		       <li class="volbaMenu"><a n:href="Index0002VolaniHodnotouReferenci:pozdravuj" style="color: white">Index0002VolaniHodnotouReferenci</a></li>
+		       <li class="volbaMenu"><a n:href="Index0003ArrayPoradi:formular" style="color: white">Index0003ArrayPoradi</a></li>
+		       <li class="volbaMenu"><a n:href="Index0004RetezeniMetod:formular" style="color: white">Index0004RetezeniMetod</a></li>
+                    </ul>
+                </td></tr>
+            </table>
+        </nav>
+
+        
+
+        {*<div style ="top:0px; margin-top: 50px">.</div>*}
+        
+        {include content} {* sem se vkládá obsah z latte šablon presenterů/renderů*}
+        {block scripts}
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+        {*script src="https://nette.github.io/resources/js/netteForms.js"></script>*}
+        <script src="{$basePath}/js/main.js"></script>
+        {/block}
+
+        </body>
+</html>

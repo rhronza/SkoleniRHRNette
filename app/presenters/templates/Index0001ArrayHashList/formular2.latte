@@ -1,0 +1,30 @@
+{* Latte template *}
+{block content}
+<div style="margin: 60px 0px 0px 60px">----------
+
+<table style="border-collapse: collapse; border-style: solid; border-width: 1px">
+    <tr>
+	<td   >
+	    A:{$poleArray->foo} {*v tomto případě "zvládá" objektový zápis přes (šipku): -> *}
+	</td>
+    	<td>
+	    B:{$poleArray->bar}
+	</td>
+    	<td>
+	    C:{$poleArray->login['user']}
+	</td>
+    </tr>
+    
+    {foreach $poleList as $radek}
+	<tr>
+	    <td>
+		{$radek['Jmeno']} {*v tomto případě by objektový zápis přes -> nezvládl, error! *}
+	    </td>
+	</tr>
+	
+    {/foreach}
+    
+    
+</table>
+</div>
+{/block}
